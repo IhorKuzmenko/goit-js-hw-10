@@ -1,0 +1,1 @@
+*{box-sizing:border-box}.form{display:flex;flex-direction:column;align-items:start;gap:10px;width:200px}.form-label{display:flex;flex-direction:column;gap:8px;width:100%}.form-input{height:30px}.form-fieldset{width:100%}.form-button{cursor:pointer;width:100%}
