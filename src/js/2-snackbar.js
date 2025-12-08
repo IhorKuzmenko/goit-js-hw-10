@@ -1,6 +1,9 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+import iconSuccess from '../img/icon-success.svg';
+import arrowLeft from '../img/arrow.svg';
+
 const form = document.querySelector('.form');
 
 const createPromise = (delay, state) => {
@@ -24,12 +27,34 @@ form.addEventListener('submit', event => {
   createPromise(delay, state)
     .then(delay => {
       iziToast.show({
-        message: `✅ Fulfilled promise in ${delay} ms`,
+        class: 'custom-success-toast',
+        title: 'OK',
+        message: `Fulfilled promise in ${delay} ms`,
+        position: 'topRight',
+        layout: 2,
+        timeout: 5000,
+        close: true,
+        closeOnEscape: true,
+        transitionIn: 'fadeInLeft',
+        transitionOut: 'fadeOut',
+        iconUrl: iconSuccess,
+        iconColor: '#ffffff',
       });
     })
     .catch(delay => {
       iziToast.show({
-        message: `❌ Rejected promise in ${delay} ms`,
+        class: 'custom-error-toast',
+        title: 'ERROR',
+        message: `Rejected promise in ${delay} ms`,
+        position: 'topRight',
+        layout: 2,
+        timeout: 5000,
+        close: true,
+        closeOnEscape: true,
+        transitionIn: 'fadeInLeft',
+        transitionOut: 'fadeOut',
+        iconUrl: arrowLeft,
+        iconColor: '#ffffff',
       });
     });
 });

@@ -1,3 +1,6 @@
+import '../css/styles.css';
+import arrowLeft from '../img/arrow.svg';
+
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
@@ -26,7 +29,17 @@ const options = {
       const nowDate = new Date();
       if (selectedDate < nowDate) {
         iziToast.show({
+          class: 'custom-error-toast',
           message: 'Please choose a date in the future',
+          layout: 2,
+          timeout: 5000,
+          close: true,
+          position: 'topRight',
+          closeOnEscape: true,
+          transitionIn: 'fadeInLeft',
+          transitionOut: 'fadeOut',
+          iconUrl: arrowLeft,
+          iconColor: '#ffffff',
         });
         button.disabled = true;
       } else {

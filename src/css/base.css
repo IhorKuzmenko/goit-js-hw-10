@@ -16,9 +16,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
+  padding: 36px 156px;
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
